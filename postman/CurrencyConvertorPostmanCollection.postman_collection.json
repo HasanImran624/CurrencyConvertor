@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "ab71e001-ac4c-4503-83c6-69136c353eb0",
+		"name": "CurrencyConvertorPostmanCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9692690"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Retrievehistoricalrates",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GetLatestRates",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{local_server}}/v1/rates/latest",
+					"host": [
+						"{{local_server}}"
+					],
+					"path": [
+						"v1",
+						"rates",
+						"latest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/v1/auth/token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"hasan\", \"password\": \"currency@123\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_server\n}}/v1/auth/token",
+					"host": [
+						"{{local_server\n}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"token"
+					]
+				},
+				"description": "Generated from cURL: curl -s http://localhost:5000/api/v1/auth/token \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{ \"username\": \"alice\", \"password\": \"Pass@123\" }'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "ConvertAmount",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

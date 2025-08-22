@@ -1,0 +1,27 @@
+# Build outputs
+.vs/
+bin/
+obj/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.userprefs
+*.DS_Store
+*.swp
+*.vscode/
+*.idea/
+*.iml
+TestResults/
+*.coverage
+*.coveragexml
+coverage/
+.nuget/packages/
+.env
+.env.*
+.secrets/
+/artifacts/
+/packages/
+/node_modules/
+*.nupkg
+docker-compose.override.yml
