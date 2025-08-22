@@ -13,9 +13,9 @@ obj/
 *.idea/
 *.iml
 TestResults/
+coveragereport/
 *.coverage
 *.coveragexml
-coverage/
 .nuget/packages/
 .env
 .env.*
