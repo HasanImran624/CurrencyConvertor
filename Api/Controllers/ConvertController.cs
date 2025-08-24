@@ -19,9 +19,17 @@ public class ConvertController(IRatesService _ratesService) : ControllerBase
         [FromQuery] string to,
         CancellationToken ct = default)
     {
-        if (amount <= 0) return BadRequest("amount must be > 0");
-        var result = await _ratesService.ConvertAsync(amount, from, to, ct);
-        return Ok(result);
+        try
+        {
+            if (amount <= 0) return BadRequest("amount must be > 0");
+            var result = await _ratesService.ConvertAsync(amount, from, to, ct);
+            return Ok(result);
+        }
+        catch (ArgumentOutOfRangeException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        
     }
 
 }
